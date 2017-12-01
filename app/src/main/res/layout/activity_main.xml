@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.gotquiz.MainActivity">
+
+    <ImageView
+        android:contentDescription="@string/image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/wallpaper"
+        android:scaleType="center"/>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.android.gameofthronesquiz.MainActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/top"
+            android:orientation="vertical"
+            android:descendantFocusability="beforeDescendants"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <TextView
+                android:id="@+id/intro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/top"
+                android:gravity="center"
+                android:textSize="@dimen/bb_text"
+                android:text="@string/welcome"
+                android:textAllCaps="true"
+                android:textColor="@android:color/holo_orange_light"
+                android:background="@color/background" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/warning"
+                android:textColor="@android:color/holo_orange_light"
+                android:background="@color/background" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/top"
+                android:padding="@dimen/button_margins"
+                android:text="@string/stark_sword"
+                android:textSize="@dimen/question_size"
+                android:textColor="@android:color/holo_orange_light"
+                android:background="@color/background" />
+
+            <RadioGroup
+                android:id="@+id/sword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:background="@color/background">
+
+                <RadioButton
+                    android:id="@+id/needle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/needle" />
+
+                <RadioButton
+                    android:id="@+id/ice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/ice" />
+
+                <RadioButton
+                    android:id="@+id/longclaw"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/longclaw" />
+
+                <RadioButton
+                    android:id="@+id/oathkeeper"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/oathkeeper" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/daenerys_nickname"
+                android:textSize="@dimen/question_size"
+                android:textColor="@android:color/holo_orange_light"
+                android:background="@color/background" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/background">
+
+                <CheckBox
+                    android:id="@+id/stormborn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/stormborn" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/background">
+
+                <CheckBox
+                    android:id="@+id/unburnt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/unburnt" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/background">
+
+                <CheckBox
+                    android:id="@+id/queen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/queen" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/background">
+
+                <CheckBox
+                    android:id="@+id/silver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/silver" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/top"
+                android:text="@string/mormont_disease"
+                android:textSize="@dimen/question_size"
+                android:textColor="@android:color/holo_orange_light"
+                android:background="@color/background" />
+
+            <RadioGroup
+                android:id="@+id/jorah"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/background">
+
+                <RadioButton
+                    android:id="@+id/mere_dis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/mere" />
+
+                <RadioButton
+                    android:id="@+id/scale_dis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/grayscale" />
+
+                <RadioButton
+                    android:id="@+id/sickness_dis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/sickness" />
+
+                <RadioButton
+                    android:id="@+id/plague_dis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/plague" />
+            </RadioGroup>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/top"
+                android:text="@string/arya_direwolf"
+                android:textSize="@dimen/question_size"
+                android:textColor="@android:color/holo_orange_light"
+                android:background="@color/background" />
+
+            <!-- This LinearLayout is supposed to prevent the keyboard from appearing when the app starts-->
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_height="0px"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                tools:ignore="UselessLeaf" />
+
+            <EditText
+                android:id="@+id/direwolf_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords"
+                android:hint="@string/type"
+                android:background="@color/background"
+                android:maxLength="10" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/top"
+                android:text="@string/kingsguard"
+                android:textSize="@dimen/question_size"
+                android:textColor="@android:color/holo_orange_light"
+                android:background="@color/background" />
+
+            <EditText
+                android:id="@+id/kings_guards"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/type"
+                android:background="@color/background"
+                android:inputType="phone"
+                android:maxLength="1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/top"
+                android:text="@string/martell_seat"
+                android:textSize="@dimen/question_size"
+                android:textColor="@android:color/holo_orange_light"
+                android:background="@color/background" />
+
+            <RadioGroup
+                android:id="@+id/martell"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/background">
+
+                <RadioButton
+                    android:id="@+id/highgarden"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/highgarden" />
+
+                <RadioButton
+                    android:id="@+id/dragonst"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/dragonstone" />
+
+                <RadioButton
+                    android:id="@+id/sun"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/sunspear" />
+
+                <RadioButton
+                    android:id="@+id/volantis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/volantis" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/top"
+                android:text="@string/valar_morghulis"
+                android:textSize="@dimen/question_size"
+                android:textColor="@android:color/holo_orange_light"
+                android:background="@color/background" />
+
+            <RadioGroup
+                android:id="@+id/valar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/background">
+
+                <RadioButton
+                    android:id="@+id/must_serve"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/serve" />
+
+                <RadioButton
+                    android:id="@+id/must_today"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/today" />
+
+                <RadioButton
+                    android:id="@+id/must_die"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/die" />
+
+                <RadioButton
+                    android:id="@+id/must_win"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/win" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/top"
+                android:text="@string/varys_nickname"
+                android:textSize="@dimen/question_size"
+                android:textColor="@android:color/holo_orange_light"
+                android:background="@color/background" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/background">
+
+                <CheckBox
+                    android:id="@+id/hound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hound" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/background">
+
+                <CheckBox
+                    android:id="@+id/mountain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mountain" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/background">
+
+                <CheckBox
+                    android:id="@+id/spider"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/spider" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/background">
+
+                <CheckBox
+                    android:id="@+id/eunuch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/eunuch" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/top"
+                android:text="@string/mad_king"
+                android:textSize="@dimen/question_size"
+                android:textColor="@android:color/holo_orange_light"
+                android:background="@color/background" />
+
+            <RadioGroup
+                android:id="@+id/king"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/background">
+
+                <RadioButton
+                    android:id="@+id/aegon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/aegon" />
+
+                <RadioButton
+                    android:id="@+id/aeris"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/aeris" />
+
+                <RadioButton
+                    android:id="@+id/aemon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/aemon" />
+
+                <RadioButton
+                    android:id="@+id/rhaegar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/rhaegar" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/top"
+                android:text="@string/weapon"
+                android:textSize="@dimen/question_size"
+                android:textColor="@android:color/holo_orange_light"
+                android:background="@color/background" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/background">
+
+                <CheckBox
+                    android:id="@+id/dragonglass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dragonglass" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/background">
+
+                <CheckBox
+                    android:id="@+id/obsidian"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/obsidian" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/background">
+
+                <CheckBox
+                    android:id="@+id/dragonstone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dragonstone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/background">
+
+                <CheckBox
+                    android:id="@+id/valyrian"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/valyrian" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/top"
+                android:text="@string/religion"
+                android:textSize="@dimen/question_size"
+                android:textColor="@android:color/holo_orange_light"
+                android:background="@color/background" />
+
+            <RadioGroup
+                android:id="@+id/religion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/background">
+
+                <RadioButton
+                    android:id="@+id/old_gods"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/old_gods"
+                    tools:ignore="TooManyViews" />
+
+                <RadioButton
+                    android:id="@+id/faith"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/faith" />
+
+                <RadioButton
+                    android:id="@+id/drowned_god"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/drowned_god" />
+
+                <RadioButton
+                    android:id="@+id/lord_of_light"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/lord_of_light" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/top"
+                android:text="@string/lannister_motto"
+                android:textSize="@dimen/question_size"
+                android:textColor="@android:color/holo_orange_light"
+                android:background="@color/background" />
+
+            <RadioGroup
+                android:id="@+id/motto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/background">
+
+                <RadioButton
+                    android:id="@+id/family"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/family" />
+
+                <RadioButton
+                    android:id="@+id/roar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/roar" />
+
+                <RadioButton
+                    android:id="@+id/debts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/debts" />
+
+                <RadioButton
+                    android:id="@+id/fury"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/fury" />
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/top"
+                android:background="@color/background"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/top"
+                android:onClick="showScore"
+                android:text="@string/submit"
+                android:textColor="@android:color/holo_orange_light"
+                android:textSize="@dimen/b_text"/>
+
+            <Button
+                android:id="@+id/retake"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/top"
+                android:background="@color/background"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/top"
+                android:onClick="retakeQuiz"
+                android:text="@string/retake"
+                android:textColor="@android:color/holo_orange_light"
+                android:textSize="@dimen/b_text"/>
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

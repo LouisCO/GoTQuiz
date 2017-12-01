@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="question_size">17sp</dimen>
+    <dimen name="button_margins">5dp</dimen>
+    <dimen name="top">10dp</dimen>
+    <dimen name="b_text">20sp</dimen>
+    <dimen name="bb_text">25sp</dimen>
+</resources>

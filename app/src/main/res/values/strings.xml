@@ -1,0 +1,67 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">GoT Quiz</string>
+
+    <string name="image">Characters map of Westeros</string>
+    <string name="welcome">How well do you know \'Game of Thrones\'?</string>
+    <string name="warning"> Be careful, certain questions have multiple answers!</string>
+    <string name="stark_sword">The name of House Stark\'s ancestral sword is: </string>
+    <string name="needle">Needle</string>
+    <string name="longclaw">Longclaw</string>
+    <string name="ice">Ice</string>
+    <string name="oathkeeper">Oathkeeper</string>
+    <string name="daenerys_nickname">Daenerys Targaryen\'s nickname is: </string>
+    <string name="stormborn">Daenerys Stormborn</string>
+    <string name="unburnt">The Unburnt</string>
+    <string name="queen">Queen Mother</string>
+    <string name="silver">The Silver Queen</string>
+    <string name="mormont_disease">The deadly disease Jorah Mormont contracted is: </string>
+    <string name="mere">Pale mere</string>
+    <string name="grayscale">Grayscale</string>
+    <string name="plague">Grey plague</string>
+    <string name="sickness">Great Spring Sickness</string>
+    <string name="arya_direwolf">The name of the direwolf adopted by Arya Stark is:</string>
+    <string name="type">your answer</string>
+    <string name="nymeria">Nymeria</string>
+    <string name="varys_nickname">Lord Varys\' nickname is:</string>
+    <string name="hound">The Hound</string>
+    <string name="spider">The Spider</string>
+    <string name="mountain">The Mountain</string>
+    <string name="eunuch">The Eunuch</string>
+    <string name="martell_seat">The seat of the House Martell is:</string>
+    <string name="lannisport">Lannisport</string>
+    <string name="sunspear">Sunspear</string>
+    <string name="highgarden">Highgarden</string>
+    <string name="volantis">Volantis</string>
+    <string name="weapon">The weapon that can kill a White Walker is made of:</string>
+    <string name="dragonglass">Dragonglass</string>
+    <string name="obsidian">Obsidian</string>
+    <string name="dragonstone">Dragonstone</string>
+    <string name="valyrian">Valyrian steel</string>
+    <string name="mad_king">The name of the Mad King is:</string>
+    <string name="aegon">Aegon</string>
+    <string name="aeris">Aerys</string>
+    <string name="aemon">Aemon</string>
+    <string name="rhaegar">Rhaegar</string>
+    <string name="kingsguard">The number of the knights who serve in the Kingsguard is:</string>
+    <string name="valar_morghulis">The meaning of the High Valyrian aphorism \"Valar Morgulis\" is:</string>
+    <string name="serve">All men must serve</string>
+    <string name="today">Not today</string>
+    <string name="die">All men must die</string>
+    <string name="win">You win or you die </string>
+    <string name="religion">The dominant religion in Westeros is:</string>
+    <string name="old_gods">The Old Gods of the Forest</string>
+    <string name="drowned_god">The Drowned God</string>
+    <string name="faith">The Faith of the Seven</string>
+    <string name="lord_of_light">The Lord of Light</string>
+    <string name="lannister_motto">The official Lannister house motto is:</string>
+    <string name="family">Family, Duty, Honor</string>
+    <string name="roar">Hear me roar</string>
+    <string name="debts">A Lannister always pays his debts</string>
+    <string name="fury">Ours is the Fury</string>
+    <string name="submit">How good am I?</string>
+    <string name="retake">Try again</string>
+    <string name="result1">Your score is <xliff:g id="points" example="2">%d</xliff:g> out of 17. \"You know nothing, Jon Snow!\"</string>
+    <string name="result2">Your score is <xliff:g id="points" example="7">%d</xliff:g> out of 17. \"Shame!\.\.\.Shame!\.\.\.Shame!\.\.\.\"</string>
+    <string name="result3">Your score is <xliff:g id="points" example="11">%d</xliff:g> out of 17. \“That’s what I do. I drink, and I know things.\”</string>
+    <string name="result4">Your score is <xliff:g id="points" example="17">%d</xliff:g> out of 17. You could help GRRM finish the ASoIaF series sooner.</string>
+</resources>
