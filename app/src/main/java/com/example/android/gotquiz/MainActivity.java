@@ -163,10 +163,12 @@ public class MainActivity extends AppCompatActivity {
 
 
     private boolean isDirewolf(String dwName) {
+
         return (dwName.contains("Nymeria"));
     }
 
     private boolean isKingsguard(String guardNum) {
+
         return (guardNum.contentEquals("7"));
     }
 
