@@ -21,6 +21,15 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * This method is called when the reset button is clicked.
+     *
+     * And this is a way better one
+     * public void retakeQuiz (View view){
+     Intent MainActivity = getBaseContext().getPackageManager()
+     .getLaunchIntentForPackage( getBaseContext().getPackageName() );
+     MainActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+     startActivity(MainActivity);
+     }
+
      */
     public void retakeQuiz(View view) {
 
