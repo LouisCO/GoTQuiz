@@ -1,117 +1,103 @@
 package com.example.android.gotquiz;
 
+import android.content.Context;
+import android.content.Intent;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.ScrollView;
 import android.widget.Toast;
+
 
 public class MainActivity extends AppCompatActivity {
 
+    boolean IsAudioOn;
+    String position="position";
+    MediaPlayer mTune;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //Starts playing theme at app start
+        MediaPlayer tune=MediaPlayer.create(this, R.raw.got_theme);
+        tune.start();
+        tune.setLooping(true);
+        // initialize member MediaPlayer
+        mTune=tune;
     }
+
+    /**
+     * This method is invoked to save the current playback position.
+     */
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        savedInstanceState.putInt(position, mTune.getCurrentPosition());
+        mTune.stop();
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+    /**
+     * This method is called to restore the current playback position.
+     */
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        int pos=savedInstanceState.getInt(position);
+        mTune.seekTo(pos);
+        mTune.setLooping(true);
+        super.onRestoreInstanceState(savedInstanceState);
+    }
+
+
+    /**
+     * This method is called when mute/unmute button is clicked.
+     */
+    public void sound(View view) {
+        AudioManager audio=(AudioManager) this.getSystemService(Context.AUDIO_SERVICE);
+        if (IsAudioOn) {
+            IsAudioOn=false;
+            assert audio != null;
+            audio.setStreamMute(AudioManager.STREAM_MUSIC, false); // for unmute
+
+        } else {
+            IsAudioOn=true;
+            assert audio != null;
+            audio.setStreamMute(AudioManager.STREAM_MUSIC, true);  //for mute
+        }
+    }
+
 
     /**
      * This method is called when the reset button is clicked.
-     *
-     * And this is a way better one
-     * public void retakeQuiz (View view){
-     Intent MainActivity = getBaseContext().getPackageManager()
-     .getLaunchIntentForPackage( getBaseContext().getPackageName() );
-     MainActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-     startActivity(MainActivity);
-     }
-
      */
     public void retakeQuiz(View view) {
-
-        RadioGroup swordGroup=findViewById(R.id.sword);
-        swordGroup.clearCheck();
-
-        CheckBox stormbornCBox=findViewById(R.id.stormborn);
-        stormbornCBox.setChecked(false);
-
-        CheckBox unburntCBox=findViewById(R.id.unburnt);
-        unburntCBox.setChecked(false);
-
-        CheckBox queenCBox=findViewById(R.id.queen);
-        queenCBox.setChecked(false);
-
-        CheckBox silverCBox=findViewById(R.id.silver);
-        silverCBox.setChecked(false);
-
-        EditText dwName=findViewById(R.id.direwolf_name);
-        dwName.setText(null);
-
-        RadioGroup jorahGroup=findViewById(R.id.jorah);
-        jorahGroup.clearCheck();
-
-        RadioGroup martellGroup=findViewById(R.id.martell);
-        martellGroup.clearCheck();
-
-        RadioGroup valarGroup=findViewById(R.id.valar);
-        valarGroup.clearCheck();
-
-        CheckBox hCBox=findViewById(R.id.hound);
-        hCBox.setChecked(false);
-
-        CheckBox mountCBox=findViewById(R.id.mountain);
-        mountCBox.setChecked(false);
-
-        CheckBox spiderCBox=findViewById(R.id.spider);
-        spiderCBox.setChecked(false);
-
-        CheckBox eunuchCBox=findViewById(R.id.eunuch);
-        eunuchCBox.setChecked(false);
-
-        RadioGroup kingGroup=findViewById(R.id.king);
-        kingGroup.clearCheck();
-
-        EditText guardNumber=findViewById(R.id.kings_guards);
-        guardNumber.setText(null);
-
-        CheckBox dragonCBox=findViewById(R.id.dragonglass);
-        dragonCBox.setChecked(false);
-
-        CheckBox obsidianCBox=findViewById(R.id.obsidian);
-        obsidianCBox.setChecked(false);
-
-        CheckBox valyrianCBox=findViewById(R.id.valyrian);
-        valyrianCBox.setChecked(false);
-
-        RadioGroup religionGroup=findViewById(R.id.religion);
-        religionGroup.clearCheck();
-
-        RadioGroup mottoGroup=findViewById(R.id.motto);
-        mottoGroup.clearCheck();
-
-        ScrollView scrollView=findViewById(R.id.scroll_view);
-        scrollView.fullScroll(ScrollView.FOCUS_UP);
-
+        Intent MainActivity=getBaseContext().getPackageManager()
+                .getLaunchIntentForPackage(getBaseContext().getPackageName());
+        assert MainActivity != null;
+        MainActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(MainActivity);
     }
+
 
     /**
      * This method checks if all questions are answered
-     * @param isMartellChecked /
-     * @param isMottoChecked /
-     * @param isReligionChecked /
-     * @param isValarChecked /
-     * @param isVarysChecked /
-     * @param isWeaponChecked /
+     *
+     * @param isMartellChecked   /
+     * @param isMottoChecked     /
+     * @param isReligionChecked  /
+     * @param isValarChecked     /
+     * @param isVarysChecked     /
+     * @param isWeaponChecked    /
      * @param isSwordChecked/
      * @param isDaenerysChecked/
      * @param isNymeria/
-     * @param isJorahChecked /
-     * @param isKingChecked /
-     * @param isKnightsNum /
+     * @param isJorahChecked     /
+     * @param isKingChecked      /
+     * @param isKnightsNum       /
      * @return quiz checked
      */
     private boolean isQuizChecked(boolean isSwordChecked, boolean isDaenerysChecked, boolean isNymeria, boolean isJorahChecked, boolean isKnightsNum, boolean isMartellChecked, boolean isValarChecked, boolean isVarysChecked, boolean isKingChecked, boolean isWeaponChecked, boolean isReligionChecked, boolean isMottoChecked) {
@@ -387,22 +373,20 @@ public class MainActivity extends AppCompatActivity {
 
         int points=calculateScore(isIceChecked, isStormbornChecked, isUnburntChecked, isSilverChecked, isGrayscaleChecked, isDirewolf(dWname), isSunChecked, isDieChecked, isSpiderChecked, isEunuchChecked, isAerisChecked, isKingsguard(guardNum), isDragonglassChecked, isObsidianChecked, isValyrianChecked, isFaith, isRoar);
 
-        if (points == 17 && isQuizChecked(isSwordChecked(), isDaenerysChecked(), isNymeria(dWname), isJorahChecked(), isKnightsNum(guardNum), isMartellChecked(), isValarChecked(), isVarysChecked(), isKingChecked(), isWeaponChecked(), isReligionChecked(), isMottoChecked())) {
+        if (points == 17 && isQuizChecked(isSwordChecked(), isDaenerysChecked(), isNymeria(dWname), isJorahChecked(), isKnightsNum(guardNum), isMartellChecked(), isValarChecked(), isVarysChecked(), isKingChecked(), isWeaponChecked(), isReligionChecked(), isMottoChecked()))
             Toast.makeText(this, getString(R.string.result4, points), Toast.LENGTH_SHORT).show();
-        } else if (points < 5 && isQuizChecked(isSwordChecked(), isDaenerysChecked(), isNymeria(dWname), isJorahChecked(), isKnightsNum(guardNum), isMartellChecked(), isValarChecked(), isVarysChecked(), isKingChecked(), isWeaponChecked(), isReligionChecked(), isMottoChecked())) {
+        else if (points < 5 && isQuizChecked(isSwordChecked(), isDaenerysChecked(), isNymeria(dWname), isJorahChecked(), isKnightsNum(guardNum), isMartellChecked(), isValarChecked(), isVarysChecked(), isKingChecked(), isWeaponChecked(), isReligionChecked(), isMottoChecked()))
             Toast.makeText(this, getString(R.string.result1, points), Toast.LENGTH_LONG).show();
-        } else if (points > 12 && isQuizChecked(isSwordChecked(), isDaenerysChecked(), isNymeria(dWname), isJorahChecked(), isKnightsNum(guardNum), isMartellChecked(), isValarChecked(), isVarysChecked(), isKingChecked(), isWeaponChecked(), isReligionChecked(), isMottoChecked())) {
+        else if (points > 12 && isQuizChecked(isSwordChecked(), isDaenerysChecked(), isNymeria(dWname), isJorahChecked(), isKnightsNum(guardNum), isMartellChecked(), isValarChecked(), isVarysChecked(), isKingChecked(), isWeaponChecked(), isReligionChecked(), isMottoChecked()))
             Toast.makeText(this, getString(R.string.result3, points), Toast.LENGTH_LONG).show();
-        } else if (points > 5 && points < 12 && isQuizChecked(isSwordChecked(), isDaenerysChecked(), isNymeria(dWname), isJorahChecked(), isKnightsNum(guardNum), isMartellChecked(), isValarChecked(), isVarysChecked(), isKingChecked(), isWeaponChecked(), isReligionChecked(), isMottoChecked())) {
+        else if (points > 5 && points < 12 && isQuizChecked(isSwordChecked(), isDaenerysChecked(), isNymeria(dWname), isJorahChecked(), isKnightsNum(guardNum), isMartellChecked(), isValarChecked(), isVarysChecked(), isKingChecked(), isWeaponChecked(), isReligionChecked(), isMottoChecked()))
             Toast.makeText(this, getString(R.string.result2, points), Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(this, getString(R.string.omission), Toast.LENGTH_LONG).show();
-        }
-
+        else Toast.makeText(this, getString(R.string.omission), Toast.LENGTH_LONG).show();
     }
 
     /**
      * This method checks answer to Q4
+     *
      * @param dwName/
      * @return the exact name
      */
@@ -413,6 +397,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * This method checks answer to Q5
+     *
      * @param guardNum/
      * @return the number
      */
@@ -439,70 +424,34 @@ public class MainActivity extends AppCompatActivity {
      * @param isValyrianChecked    /
      * @param isFaith              /
      * @param isRoar               /
-     *                             <p>
-     *                             <p>
-     *                             * @return total points
+     * @return total points
      */
     private int calculateScore(boolean isIceChecked, boolean isStormbornChecked,
-                              boolean isUnburntChecked, boolean isSilverChecked, boolean isDirewolf, boolean isSunChecked,
-                              boolean isGrayscaleChecked, boolean isDieChecked, boolean isSpiderChecked,
-                              boolean isEunuchChecked, boolean isAerisChecked, boolean isKingsguard,
-                              boolean isDragonglassChecked, boolean isObsidianChecked, boolean isValyrianChecked,
-                              boolean isFaith, boolean isRoar) {
+                               boolean isUnburntChecked, boolean isSilverChecked, boolean isDirewolf, boolean isSunChecked,
+                               boolean isGrayscaleChecked, boolean isDieChecked, boolean isSpiderChecked,
+                               boolean isEunuchChecked, boolean isAerisChecked, boolean isKingsguard,
+                               boolean isDragonglassChecked, boolean isObsidianChecked, boolean isValyrianChecked,
+                               boolean isFaith, boolean isRoar) {
 
         int points=0;
 
-        if (isIceChecked) {
-            points+=1;
-        }
-        if (isStormbornChecked) {
-            points+=1;
-        }
-        if (isUnburntChecked) {
-            points+=1;
-        }
-        if (isSilverChecked) {
-            points+=1;
-        }
-        if (isDirewolf) {
-            points+=1;
-        }
-        if (isSunChecked) {
-            points+=1;
-        }
-        if (isGrayscaleChecked) {
-            points+=1;
-        }
-        if (isDieChecked) {
-            points+=1;
-        }
-        if (isSpiderChecked) {
-            points+=1;
-        }
-        if (isEunuchChecked) {
-            points+=1;
-        }
-        if (isAerisChecked) {
-            points+=1;
-        }
-        if (isKingsguard) {
-            points+=1;
-        }
-        if (isDragonglassChecked) {
-            points+=1;
-        }
-        if (isObsidianChecked) {
-            points+=1;
-        }
-        if (isValyrianChecked) {
-            points+=1;
-        }
-        if (isFaith) {
-            points+=1;
-        }
-        if (isRoar) {
-            points+=1;
-        }
+        if (isIceChecked) points+=1;
+        if (isStormbornChecked) points+=1;
+        if (isUnburntChecked) points+=1;
+        if (isSilverChecked) points+=1;
+        if (isDirewolf) points+=1;
+        if (isSunChecked) points+=1;
+        if (isGrayscaleChecked) points+=1;
+        if (isDieChecked) points+=1;
+        if (isSpiderChecked) points+=1;
+        if (isEunuchChecked) points+=1;
+        if (isAerisChecked) points+=1;
+        if (isKingsguard) points+=1;
+        if (isDragonglassChecked) points+=1;
+        if (isObsidianChecked) points+=1;
+        if (isValyrianChecked) points+=1;
+        if (isFaith) points+=1;
+        if (isRoar) points+=1;
 
         return points;
     }
