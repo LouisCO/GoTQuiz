@@ -62,7 +62,7 @@
     <string name="result2">Your score is <xliff:g example="7" id="points">%d</xliff:g> out of 17. \"Shame!\.\.\.Shame!\.\.\.Shame!\.\.\.\"</string>
     <string name="result3">Your score is <xliff:g example="11" id="points">%d</xliff:g> out of 17. \“That’s what I do. I drink, and I know things.\”</string>
     <string name="result4">Your score is <xliff:g example="17" id="points">%d</xliff:g> out of 17. You could help GRRM finish the ASoIaF series sooner.</string>
-    <string name="omission">You omitted a question</string>
+    <string name="omission">You skipped at least one question</string>
     <string name="got">#</string>
     <string name="welcome_cont">quiz</string>
     <string name="mute">mute</string>

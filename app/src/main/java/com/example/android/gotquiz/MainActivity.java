@@ -377,9 +377,9 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, getString(R.string.result4, points), Toast.LENGTH_SHORT).show();
         else if (points < 5 && isQuizChecked(isSwordChecked(), isDaenerysChecked(), isNymeria(dWname), isJorahChecked(), isKnightsNum(guardNum), isMartellChecked(), isValarChecked(), isVarysChecked(), isKingChecked(), isWeaponChecked(), isReligionChecked(), isMottoChecked()))
             Toast.makeText(this, getString(R.string.result1, points), Toast.LENGTH_LONG).show();
-        else if (points > 12 && isQuizChecked(isSwordChecked(), isDaenerysChecked(), isNymeria(dWname), isJorahChecked(), isKnightsNum(guardNum), isMartellChecked(), isValarChecked(), isVarysChecked(), isKingChecked(), isWeaponChecked(), isReligionChecked(), isMottoChecked()))
+        else if (points >= 11 && points < 17 && isQuizChecked(isSwordChecked(), isDaenerysChecked(), isNymeria(dWname), isJorahChecked(), isKnightsNum(guardNum), isMartellChecked(), isValarChecked(), isVarysChecked(), isKingChecked(), isWeaponChecked(), isReligionChecked(), isMottoChecked()))
             Toast.makeText(this, getString(R.string.result3, points), Toast.LENGTH_LONG).show();
-        else if (points > 5 && points < 12 && isQuizChecked(isSwordChecked(), isDaenerysChecked(), isNymeria(dWname), isJorahChecked(), isKnightsNum(guardNum), isMartellChecked(), isValarChecked(), isVarysChecked(), isKingChecked(), isWeaponChecked(), isReligionChecked(), isMottoChecked()))
+        else if (points >= 5 && points < 11 && isQuizChecked(isSwordChecked(), isDaenerysChecked(), isNymeria(dWname), isJorahChecked(), isKnightsNum(guardNum), isMartellChecked(), isValarChecked(), isVarysChecked(), isKingChecked(), isWeaponChecked(), isReligionChecked(), isMottoChecked()))
             Toast.makeText(this, getString(R.string.result2, points), Toast.LENGTH_LONG).show();
         else Toast.makeText(this, getString(R.string.omission), Toast.LENGTH_LONG).show();
     }
