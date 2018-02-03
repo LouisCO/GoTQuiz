@@ -52,6 +52,15 @@ public class MainActivity extends AppCompatActivity {
         super.onRestoreInstanceState(savedInstanceState);
     }
 
+    /**
+     * This method is called to stop the music on app exit
+     */
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mTune.release();
+    }
+
 
     /**
      * This method is called when mute/unmute button is clicked.
