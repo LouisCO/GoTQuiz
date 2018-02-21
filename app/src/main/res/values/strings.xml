@@ -20,7 +20,7 @@
     <string name="plague">Grey plague</string>
     <string name="sickness">Great Spring Sickness</string>
     <string name="arya_direwolf">The\u0020 name\u0020 of\u0020 the\u0020 direwolf\u0020 adopted\u0020 by\u0020 Arya\u0020 Stark\u0020 is</string>
-    <string name="type">your answer</string>
+    <string name="type">your answer here</string>
     <string name="varys_nickname">Lord\u0020 Varys\u0020 nickname\u0020 is</string>
     <string name="hound">The Hound</string>
     <string name="spider">The Spider</string>
@@ -66,4 +66,5 @@
     <string name="got">#</string>
     <string name="welcome_cont">quiz</string>
     <string name="mute">mute</string>
+    <string name="unmute">mute/unmute button</string>
 </resources>

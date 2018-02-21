@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
@@ -65,17 +66,21 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method is called when mute/unmute button is clicked.
      */
-    public void sound(View view) {
+    public void sound(View v) {
         AudioManager audio=(AudioManager) this.getSystemService(Context.AUDIO_SERVICE);
+        ImageView note=findViewById(R.id.mute);
+
         if (IsAudioOn) {
             IsAudioOn=false;
             assert audio != null;
             audio.setStreamMute(AudioManager.STREAM_MUSIC, false); // for unmute
+            note.setImageResource(R.drawable.ic_note);
 
         } else {
             IsAudioOn=true;
             assert audio != null;
             audio.setStreamMute(AudioManager.STREAM_MUSIC, true);  //for mute
+            note.setImageResource(R.drawable.ic_nonote);
         }
     }
 
@@ -444,23 +449,23 @@ public class MainActivity extends AppCompatActivity {
 
         int points=0;
 
-        if (isIceChecked) points+=1;
-        if (isStormbornChecked) points+=1;
-        if (isUnburntChecked) points+=1;
-        if (isSilverChecked) points+=1;
-        if (isDirewolf) points+=1;
-        if (isSunChecked) points+=1;
-        if (isGrayscaleChecked) points+=1;
-        if (isDieChecked) points+=1;
-        if (isSpiderChecked) points+=1;
-        if (isEunuchChecked) points+=1;
-        if (isAerisChecked) points+=1;
-        if (isKingsguard) points+=1;
-        if (isDragonglassChecked) points+=1;
-        if (isObsidianChecked) points+=1;
-        if (isValyrianChecked) points+=1;
-        if (isFaith) points+=1;
-        if (isRoar) points+=1;
+        if (isIceChecked) points++;
+        if (isStormbornChecked) points++;
+        if (isUnburntChecked) points++;
+        if (isSilverChecked) points++;
+        if (isDirewolf) points++;
+        if (isSunChecked) points++;
+        if (isGrayscaleChecked) points++;
+        if (isDieChecked) points++;
+        if (isSpiderChecked) points++;
+        if (isEunuchChecked) points++;
+        if (isAerisChecked) points++;
+        if (isKingsguard) points++;
+        if (isDragonglassChecked) points++;
+        if (isObsidianChecked) points++;
+        if (isValyrianChecked) points++;
+        if (isFaith) points++;
+        if (isRoar) points++;
 
         return points;
     }

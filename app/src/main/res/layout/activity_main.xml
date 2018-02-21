@@ -3,15 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.gotquiz.MainActivity"
-    tools:ignore="RtlSymmetry"
-    tools:targetApi="jelly_bean">
+    tools:context="com.example.android.gotquiz.MainActivity">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/bckg_style"
         android:contentDescription="@string/image"
-        android:scaleType="center"
         android:src="@drawable/wallpaper" />
 
     <ScrollView
@@ -21,728 +17,419 @@
 
         <LinearLayout
             android:id="@+id/my_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/top"
-            android:layout_marginRight="@dimen/top"
-            android:descendantFocusability="beforeDescendants"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:orientation="vertical"
-            android:padding="@dimen/top">
+            style="@style/parent_ll_style">
 
             <TextView
                 android:id="@+id/intro"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/top"
-                android:background="@drawable/text_bckg_up"
-                android:fontFamily="@font/gameot"
-                android:gravity="center"
-                android:paddingTop="@dimen/q_pad"
-                android:text="@string/welcome"
-                android:textAllCaps="true"
-                android:textColor="@android:color/holo_orange_light"
-                android:textSize="@dimen/bb_text" />
+                style="@style/intro_text_style1"
+                android:text="@string/welcome" />
 
             <TextView
                 android:id="@+id/intro2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/background"
-                android:fontFamily="@font/gameot"
-                android:gravity="center"
+                style="@style/intro_text_style"
                 android:text="@string/got"
-                android:textAllCaps="true"
-                android:textColor="@android:color/holo_orange_light"
-                android:textSize="28sp" />
+                android:textSize="@dimen/got" />
 
             <TextView
                 android:id="@+id/intro3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/background"
-                android:fontFamily="@font/gameot"
-                android:gravity="center"
-                android:text="@string/welcome_cont"
-                android:textAllCaps="true"
-                android:textColor="@android:color/holo_orange_light"
-                android:textSize="@dimen/bb_text" />
+                style="@style/intro_text_style"
+                android:text="@string/welcome_cont" />
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/text_bckg_down"
-                android:gravity="center"
-                android:paddingBottom="@dimen/button_margins"
-                android:text="@string/warning"
-                android:textSize="@dimen/question_size" />
+                style="@style/intro3_text_style"
+                android:text="@string/warning" />
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/top"
-                android:background="@drawable/text_bckg_up"
-                android:fontFamily="@font/gameot"
-                android:paddingLeft="@dimen/q_pad"
-                android:paddingRight="@dimen/q_pad"
-                android:paddingStart="@dimen/q_pad"
-                android:paddingTop="@dimen/q_pad"
-                android:text="@string/stark_sword"
-                android:textColor="@android:color/holo_orange_light"
-                android:textSize="@dimen/question_size" />
+                style="@style/q_style"
+                android:text="@string/stark_sword" />
 
             <RadioGroup
                 android:id="@+id/sword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/text_bckg_down">
+                style="@style/rg_style">
 
                 <RadioButton
                     android:id="@+id/needle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    style="@style/rb_style"
                     android:text="@string/needle" />
 
                 <RadioButton
                     android:id="@+id/ice"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
+                    style="@style/rb_style"
                     android:text="@string/ice" />
 
                 <RadioButton
                     android:id="@+id/longclaw"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
+                    style="@style/rb_style"
                     android:text="@string/longclaw" />
 
                 <RadioButton
                     android:id="@+id/oathkeeper"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
+                    style="@style/rb_style"
                     android:text="@string/oathkeeper" />
             </RadioGroup>
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/top"
-                android:background="@drawable/text_bckg_up"
-                android:fontFamily="@font/gameot"
-                android:paddingLeft="@dimen/q_pad"
-                android:paddingStart="@dimen/q_pad"
-                android:paddingTop="@dimen/q_pad"
-                android:text="@string/daenerys_nickname"
-                android:textColor="@android:color/holo_orange_light"
-                android:textSize="@dimen/question_size" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/background"
-                android:orientation="horizontal">
+                style="@style/q_style"
+                android:text="@string/daenerys_nickname" />
+
+            <LinearLayout style="@style/chbox_ll_style">
 
                 <CheckBox
                     android:id="@+id/stormborn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    style="@style/chbox_style" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/chbox_style"
                     android:text="@string/stormborn" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/background"
-                android:orientation="horizontal">
+            <LinearLayout style="@style/chbox_ll_style">
 
                 <CheckBox
                     android:id="@+id/unburnt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    style="@style/chbox_style" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/chbox_style"
                     android:text="@string/unburnt" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/background"
-                android:orientation="horizontal">
+            <LinearLayout style="@style/chbox_ll_style">
 
                 <CheckBox
                     android:id="@+id/queen"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    style="@style/chbox_style" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/chbox_style"
                     android:text="@string/queen" />
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/text_bckg_down"
+                style="@style/rg_style"
                 android:orientation="horizontal">
 
                 <CheckBox
                     android:id="@+id/silver"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    style="@style/chbox_style" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/chbox_style"
                     android:text="@string/silver" />
             </LinearLayout>
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/top"
-                android:background="@drawable/text_bckg_up"
-                android:fontFamily="@font/gameot"
-                android:paddingLeft="@dimen/q_pad"
-                android:paddingStart="@dimen/q_pad"
-                android:paddingTop="@dimen/q_pad"
-                android:text="@string/mormont_disease"
-                android:textColor="@android:color/holo_orange_light"
-                android:textSize="@dimen/question_size" />
+                style="@style/q_style"
+                android:text="@string/mormont_disease" />
 
             <RadioGroup
                 android:id="@+id/jorah"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/text_bckg_down">
+                style="@style/rg_style">
 
                 <RadioButton
                     android:id="@+id/mere_dis"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
+                    style="@style/rb_style"
                     android:text="@string/mere" />
 
                 <RadioButton
                     android:id="@+id/scale_dis"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
+                    style="@style/rb_style"
                     android:text="@string/grayscale" />
 
                 <RadioButton
                     android:id="@+id/sickness_dis"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
+                    style="@style/rb_style"
                     android:text="@string/sickness" />
 
                 <RadioButton
                     android:id="@+id/plague_dis"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
+                    style="@style/rb_style"
                     android:text="@string/plague" />
             </RadioGroup>
 
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/top"
-                android:background="@drawable/text_bckg_up"
-                android:fontFamily="@font/gameot"
-                android:paddingLeft="@dimen/q_pad"
-                android:paddingStart="@dimen/q_pad"
-                android:paddingTop="@dimen/q_pad"
-                android:text="@string/arya_direwolf"
-                android:textColor="@android:color/holo_orange_light"
-                android:textSize="@dimen/question_size" />
+                style="@style/q_style"
+                android:text="@string/arya_direwolf" />
 
             <!-- This LinearLayout is supposed to prevent the keyboard from appearing when the app starts-->
             <LinearLayout
-                android:layout_width="0px"
-                android:layout_height="0px"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
+                style="@style/inv_ll_style"
                 tools:ignore="UselessLeaf" />
 
             <EditText
                 android:id="@+id/direwolf_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/text_bckg_down"
-                android:hint="@string/type"
-                android:inputType="textCapWords"
-                android:maxLength="10"
-                android:paddingLeft="@dimen/q_pad"
-                android:paddingStart="@dimen/q_pad" />
+                style="@style/etxt_style"
+                android:hint="@string/type" />
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/top"
-                android:background="@drawable/text_bckg_up"
-                android:fontFamily="@font/gameot"
-                android:paddingLeft="@dimen/q_pad"
-                android:paddingStart="@dimen/q_pad"
-                android:paddingTop="@dimen/q_pad"
-                android:text="@string/kingsguard"
-                android:textColor="@android:color/holo_orange_light"
-                android:textSize="@dimen/question_size" />
+                style="@style/q_style"
+                android:text="@string/kingsguard" />
 
             <EditText
                 android:id="@+id/kings_guards"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/text_bckg_down"
-                android:hint="@string/type"
-                android:inputType="phone"
-                android:maxLength="1"
-                android:paddingLeft="@dimen/q_pad"
-                android:paddingStart="@dimen/q_pad" />
+                style="@style/etxt2_style"
+                android:hint="@string/type" />
 
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/top"
-                android:background="@drawable/text_bckg_up"
-                android:fontFamily="@font/gameot"
-                android:paddingLeft="@dimen/q_pad"
-                android:paddingStart="@dimen/q_pad"
-                android:paddingTop="@dimen/q_pad"
-                android:text="@string/martell_seat"
-                android:textColor="@android:color/holo_orange_light"
-                android:textSize="@dimen/question_size" />
+                style="@style/q_style"
+                android:text="@string/martell_seat" />
 
             <RadioGroup
                 android:id="@+id/martell"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/text_bckg_down">
+                style="@style/rg_style">
 
                 <RadioButton
                     android:id="@+id/highgarden"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
+                    style="@style/rb_style"
                     android:text="@string/highgarden" />
 
                 <RadioButton
                     android:id="@+id/dragonst"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
+                    style="@style/rb_style"
                     android:text="@string/dragonstone" />
 
                 <RadioButton
                     android:id="@+id/sun"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
+                    style="@style/rb_style"
                     android:text="@string/sunspear" />
 
                 <RadioButton
                     android:id="@+id/volantis"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
+                    style="@style/rb_style"
                     android:text="@string/volantis" />
             </RadioGroup>
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/top"
-                android:background="@drawable/text_bckg_up"
-                android:fontFamily="@font/gameot"
-                android:paddingLeft="@dimen/q_pad"
-                android:paddingStart="@dimen/q_pad"
-                android:paddingTop="@dimen/q_pad"
-                android:text="@string/valar_morghulis"
-                android:textColor="@android:color/holo_orange_light"
-                android:textSize="@dimen/question_size" />
+                style="@style/q_style"
+                android:text="@string/valar_morghulis" />
 
             <RadioGroup
                 android:id="@+id/valar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/text_bckg_down">
+                style="@style/rg_style">
 
                 <RadioButton
                     android:id="@+id/must_serve"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
+                    style="@style/rb_style"
                     android:text="@string/serve" />
 
                 <RadioButton
                     android:id="@+id/must_today"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
+                    style="@style/rb_style"
                     android:text="@string/today" />
 
                 <RadioButton
                     android:id="@+id/must_die"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
+                    style="@style/rb_style"
                     android:text="@string/die" />
 
                 <RadioButton
                     android:id="@+id/must_win"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
+                    style="@style/rb_style"
                     android:text="@string/win" />
             </RadioGroup>
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/top"
-                android:background="@drawable/text_bckg_up"
-                android:fontFamily="@font/gameot"
-                android:paddingLeft="@dimen/q_pad"
-                android:paddingStart="@dimen/q_pad"
-                android:paddingTop="@dimen/q_pad"
-                android:text="@string/varys_nickname"
-                android:textColor="@android:color/holo_orange_light"
-                android:textSize="@dimen/question_size" />
+                style="@style/q_style"
+                android:text="@string/varys_nickname" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/background"
-                android:orientation="horizontal">
+            <LinearLayout style="@style/chbox_ll_style">
 
                 <CheckBox
                     android:id="@+id/hound"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    style="@style/chbox_style" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/chbox_style"
                     android:text="@string/hound" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/background"
-                android:orientation="horizontal">
+            <LinearLayout style="@style/chbox_ll_style">
 
                 <CheckBox
                     android:id="@+id/mountain"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    style="@style/chbox_style" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/chbox_style"
                     android:text="@string/mountain" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/background"
-                android:orientation="horizontal">
+            <LinearLayout style="@style/chbox_ll_style">
 
                 <CheckBox
                     android:id="@+id/spider"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    style="@style/chbox_style" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/chbox_style"
                     android:text="@string/spider" />
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/text_bckg_down"
+                style="@style/rg_style"
                 android:orientation="horizontal">
 
                 <CheckBox
                     android:id="@+id/eunuch"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    style="@style/chbox_style" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/chbox_style"
                     android:text="@string/eunuch" />
             </LinearLayout>
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/top"
-                android:background="@drawable/text_bckg_up"
-                android:fontFamily="@font/gameot"
-                android:paddingLeft="@dimen/q_pad"
-                android:paddingStart="@dimen/q_pad"
-                android:paddingTop="@dimen/q_pad"
-                android:text="@string/mad_king"
-                android:textColor="@android:color/holo_orange_light"
-                android:textSize="@dimen/question_size" />
+                style="@style/q_style"
+                android:text="@string/mad_king" />
 
             <RadioGroup
                 android:id="@+id/king"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/text_bckg_down">
+                style="@style/rg_style">
 
                 <RadioButton
                     android:id="@+id/aegon"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
+                    style="@style/rb_style"
                     android:text="@string/aegon" />
 
                 <RadioButton
                     android:id="@+id/aeris"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
+                    style="@style/rb_style"
                     android:text="@string/aeris" />
 
                 <RadioButton
                     android:id="@+id/aemon"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
+                    style="@style/rb_style"
                     android:text="@string/aemon" />
 
                 <RadioButton
                     android:id="@+id/rhaegar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
+                    style="@style/rb_style"
                     android:text="@string/rhaegar" />
             </RadioGroup>
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/top"
-                android:background="@drawable/text_bckg_up"
-                android:fontFamily="@font/gameot"
-                android:paddingLeft="@dimen/q_pad"
-                android:paddingStart="@dimen/q_pad"
-                android:paddingTop="@dimen/q_pad"
-                android:text="@string/weapon"
-                android:textColor="@android:color/holo_orange_light"
-                android:textSize="@dimen/question_size" />
+                style="@style/q_style"
+                android:text="@string/weapon" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/background"
-                android:orientation="horizontal">
+            <LinearLayout style="@style/chbox_ll_style">
 
                 <CheckBox
                     android:id="@+id/dragonglass"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    style="@style/chbox_style" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/chbox_style"
                     android:text="@string/dragonglass" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/background"
-                android:orientation="horizontal">
+            <LinearLayout style="@style/chbox_ll_style">
 
                 <CheckBox
                     android:id="@+id/obsidian"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    style="@style/chbox_style" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/chbox_style"
                     android:text="@string/obsidian" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/background"
-                android:orientation="horizontal">
+            <LinearLayout style="@style/chbox_ll_style">
 
                 <CheckBox
                     android:id="@+id/dragonstone"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    style="@style/chbox_style" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/chbox_style"
                     android:text="@string/dragonstone" />
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/text_bckg_down"
+                style="@style/rg_style"
                 android:orientation="horizontal"
                 tools:ignore="TooManyViews">
 
                 <CheckBox
                     android:id="@+id/valyrian"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    style="@style/chbox_style" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/chbox_style"
                     android:text="@string/valyrian" />
             </LinearLayout>
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/top"
-                android:background="@drawable/text_bckg_up"
-                android:fontFamily="@font/gameot"
-                android:paddingLeft="@dimen/q_pad"
-                android:paddingStart="@dimen/q_pad"
-                android:paddingTop="@dimen/q_pad"
-                android:text="@string/religion"
-                android:textColor="@android:color/holo_orange_light"
-                android:textSize="@dimen/question_size" />
+                style="@style/q_style"
+                android:text="@string/religion" />
 
             <RadioGroup
                 android:id="@+id/religion"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/text_bckg_down">
+                style="@style/rg_style">
 
                 <RadioButton
                     android:id="@+id/old_gods"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
-                    android:text="@string/old_gods"
-                    tools:ignore="TooManyViews" />
+                    style="@style/rb_style"
+                    android:text="@string/old_gods" />
 
                 <RadioButton
                     android:id="@+id/faith"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
+                    style="@style/rb_style"
                     android:text="@string/faith" />
 
                 <RadioButton
                     android:id="@+id/drowned_god"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
+                    style="@style/rb_style"
                     android:text="@string/drowned_god" />
 
                 <RadioButton
                     android:id="@+id/lord_of_light"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
+                    style="@style/rb_style"
                     android:text="@string/lord_of_light" />
             </RadioGroup>
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/top"
-                android:background="@drawable/text_bckg_up"
-                android:fontFamily="@font/gameot"
-                android:paddingLeft="@dimen/q_pad"
-                android:paddingStart="@dimen/q_pad"
-                android:paddingTop="@dimen/q_pad"
-                android:text="@string/lannister_motto"
-                android:textColor="@android:color/holo_orange_light"
-                android:textSize="@dimen/question_size" />
+                style="@style/q_style"
+                android:text="@string/lannister_motto" />
 
             <RadioGroup
                 android:id="@+id/motto"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/text_bckg_down">
+                style="@style/rg_style">
 
                 <RadioButton
                     android:id="@+id/family"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
+                    style="@style/rb_style"
                     android:text="@string/family" />
 
                 <RadioButton
                     android:id="@+id/roar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
+                    style="@style/rb_style"
                     android:text="@string/roar" />
 
                 <RadioButton
                     android:id="@+id/debts"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
+                    style="@style/rb_style"
                     android:text="@string/debts" />
 
                 <RadioButton
                     android:id="@+id/fury"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
+                    style="@style/rb_style"
                     android:text="@string/fury" />
             </RadioGroup>
 
             <Button
                 android:id="@+id/submit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="@dimen/top"
-                android:background="@drawable/button_shape"
-                android:fontFamily="@font/gameot"
+                style="@style/button_style"
                 android:onClick="showScore"
-                android:padding="@dimen/top"
-                android:text="@string/submit"
-                android:textColor="@android:color/holo_orange_light"
-                android:textSize="18sp" />
+                android:text="@string/submit" />
 
             <Button
                 android:id="@+id/retake"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="@dimen/top"
-                android:background="@drawable/button_shape"
-                android:fontFamily="@font/gameot"
+                style="@style/button_style"
                 android:onClick="retakeQuiz"
-                android:padding="@dimen/top"
                 android:text="@string/retake"
-                android:textColor="@android:color/holo_orange_light"
                 android:textSize="@dimen/question_size" />
         </LinearLayout>
 
@@ -750,15 +437,9 @@
 
     <ImageButton
         android:id="@+id/mute"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_margin="@dimen/question_size"
-        android:background="@drawable/button_round"
-        android:contentDescription="@string/mute"
+        style="@style/imgb_style"
+        android:contentDescription="@string/unmute"
         android:onClick="sound"
-        android:src="@drawable/ic_note"
-        android:textAlignment="center" />
+        android:src="@drawable/ic_note" />
 
 </RelativeLayout>

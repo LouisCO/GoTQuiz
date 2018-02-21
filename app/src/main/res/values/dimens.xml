@@ -6,5 +6,6 @@
     <dimen name="b_text">20sp</dimen>
     <dimen name="bb_text">22sp</dimen>
     <dimen name="q_pad">8dp</dimen>
+    <dimen name="got">28sp</dimen>
 
 </resources>
